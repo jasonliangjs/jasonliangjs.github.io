@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SpringCloud on I am thinking ...</title>
+    <link>https://jasonliangjs.github.io/tags/springcloud/</link>
+    <description>Recent content in SpringCloud on I am thinking ...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>All rights reserved - 2018</copyright>
+    <lastBuildDate>Sun, 02 Jun 2019 14:24:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://jasonliangjs.github.io/tags/springcloud/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Eureka 总结</title>
+      <link>https://jasonliangjs.github.io/2019/06/02/eureka-%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 02 Jun 2019 14:24:15 +0800</pubDate>
+      
+      <guid>https://jasonliangjs.github.io/2019/06/02/eureka-%E6%80%BB%E7%BB%93/</guid>
+      <description>本blog内容是工作，学习笔记，随缘更新，欢迎访问我的github，给我的项目右上方的 Star按钮，给予支持！！
+ Github：https://github.com/jasonliangjs  Eureka &amp;ndash;
+1.Eureka Server 微服务主要是由两个组件构成 Eureka Server注册中心和Eureka Client服务端.
+Eureka Server作为服务注册功能的服务器 它是服务注册中心而系统中其它微服务使用 Eureka Client 客户端 连接到Eureka Server 维持心跳连接这样就能监控系统中各个微服务是否正常运行.
+2.Eureka Server 注册中心 2.1 创建新项目
+2.2 配置pom
+2.3 在启动类上添加 @EnableEurekaServer 表示有注册中心功能
+eureka: client: service-url: defaultZone: http://localhost:8761/eureka/ 不允许eureka成为注册中心 register-with-eureka: false  3.Eureka Client服务注册 3.1 启动Eureka Server注册中心 项目打jar包 mvn clean package java运行 jar包 java -jar target/eureka-XXX.jar 后台运行eureka注册中心 nohup java -jar target/eureka-0.0.1-SNAPSHOT.jar &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;  3.2 创建eureka client-project项目 1.</description>
+    </item>
+    
+  </channel>
+</rss>

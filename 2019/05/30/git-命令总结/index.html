@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Git 命令总结"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@jason"/>
+
+
+
+  	<meta property="og:title" content="Git 命令总结 &middot; I am thinking ..." />
+  	<meta property="og:site_name" content="I am thinking ..." />
+  	<meta property="og:url" content="https://jasonliangjs.github.io/2019/05/30/git-%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" />
+
+    
+        
+            <meta property="og:image" content="/images/zelda1.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2019-05-30T16:36:08&#43;08:00" />
+
+    
+    <meta property="article:tag" content="git" />
+    
+    
+
+    <title>Git 命令总结 &middot; I am thinking ...</title>
+
+    
+    <meta name="description" content="本blog内容是工作，学习笔记，随缘更新，欢迎访问我的github，给我的项目右上方的 Star按钮，给予支持！！
+ Github：https://github.com/jasonliangjs  总结git一些命令 综述  git的时光机穿梭 git的远程仓库 git的分支管理  git的时光机穿梭-git常见命令 " />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://jasonliangjs.github.io/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="https://jasonliangjs.github.io/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="https://jasonliangjs.github.io/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="https://jasonliangjs.github.io/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atom-one-light.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="https://jasonliangjs.github.io/index.xml" rel="alternate" type="application/rss+xml" title="I am thinking ..." />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.55.6" />
+
+    <link rel="canonical" href="https://jasonliangjs.github.io/2019/05/30/git-%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://jasonliangjs.github.io/https://avatars3.githubusercontent.com/u/43785651?s=460\u0026v=4"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://jasonliangjs.github.io/https://avatars3.githubusercontent.com/u/43785651?s=460\u0026v=4",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "Stay hungry, Stay foolish."
+        
+    },
+    "headline": "Git 命令总结",
+    "name": "Git 命令总结",
+    "wordCount":  315 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://jasonliangjs.github.io/2019/05/30/git-%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/",
+    "datePublished": "2019-05-30T16:36Z",
+    "dateModified": "2019-05-30T16:36Z",
+    
+    "keywords": "git",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://jasonliangjs.github.io/2019/05/30/git-%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://jasonliangjs.github.io/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://jasonliangjs.github.io/tags/java">Java</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://jasonliangjs.github.io/tags/springcloud">SpringCloud</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://jasonliangjs.github.io/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://jasonliangjs.github.io/tags/git">Git</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="https://jasonliangjs.github.io/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="https://jasonliangjs.github.io/"><img src="https://avatars3.githubusercontent.com/u/43785651?s=460&amp;v=4" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Git 命令总结</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2019-05-30T16:36:08&#43;08:00">
+            May 30, 2019
+          </time>
+        
+         
+          <span class="post-tag small"><a href="https://jasonliangjs.github.io//tags/git/">#git</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<hr />
+
+<p>本blog内容是工作，学习笔记，随缘更新，欢迎访问我的github，给我的项目右上方的 Star按钮，给予支持！！</p>
+
+<ul>
+<li>Github：<a href="https://github.com/jasonliangjs">https://github.com/jasonliangjs</a></li>
+</ul>
+
+<h1 id="总结git一些命令">总结git一些命令</h1>
+
+<h2 id="综述">综述</h2>
+
+<ul>
+<li>git的时光机穿梭</li>
+<li>git的远程仓库</li>
+<li>git的分支管理</li>
+</ul>
+
+<hr />
+
+<h2 id="git的时光机穿梭-git常见命令">git的时光机穿梭-git常见命令</h2>
+
+<p>切换其他git远程仓库：</p>
+
+<pre><code>git remote rm origin   
+git remote add origin git@github.com:jasonliangjs/learngit.git 
+</code></pre>
+
+<p>1.选择一个合适位置创建一个空目录</p>
+
+<pre><code>mkdir/Users/michael/learngit
+</code></pre>
+
+<p>2.把目录变成Git可以管理的仓库</p>
+
+<pre><code>git init 
+</code></pre>
+
+<p>掌握工作区状态</p>
+
+<pre><code>git status
+</code></pre>
+
+<p>如果git status显示有修改，查看修改内容</p>
+
+<pre><code>git diff
+</code></pre>
+
+<p>3.将代码（readme）从工作区添加到暂存区</p>
+
+<pre><code>git add readme.txt
+</code></pre>
+
+<p>4.‘注释’文件 将缓存区内容添加到本地仓库</p>
+
+<pre><code>git commit -m &quot;append GPL&quot;
+</code></pre>
+
+<p>5.显示git的日志，—-pretty=oneline 精简日志</p>
+
+<pre><code>git log --pretty=oneline
+</code></pre>
+
+<h3 id="git的时光机">git的时光机</h3>
+
+<p>1.撤回上一个版本的git</p>
+
+<pre><code>git reset --hard HEAD^
+</code></pre>
+
+<p>2.回滚到相应的版本号对应的版本</p>
+
+<pre><code>git reset --hard  8ff33475c6797d10629ba849cf721bfe39ad863e
+</code></pre>
+
+<p>3.查看提交历史</p>
+
+<pre><code>git log
+</code></pre>
+
+<p>4.查看所有提交历史</p>
+
+<pre><code>git reflog
+</code></pre>
+
+<h3 id="修改的情况">修改的情况</h3>
+
+<p>1.如果git并没有执行add ，也就是还在工作区</p>
+
+<pre><code>git checkout —- readme.txt
+</code></pre>
+
+<p>2.如果执行add，处于暂存区，先回到工作区，再重复1</p>
+
+<pre><code>git reset HEAD readme.txt
+
+git checkout -—readme.txt
+</code></pre>
+
+<h2 id="创建分支">创建分支</h2>
+
+<p>1.创建分支(dev)</p>
+
+<pre><code>git checkout -b dev
+</code></pre>
+
+<p>2.查看当前分支</p>
+
+<pre><code>git branch
+
+对master中的readme.txt进行修改  
+git add readme.txt - git commit -m “branch test”提交
+
+git checkout master切回master分支 ，查看master中的readme并无变化
+</code></pre>
+
+<p>3.合并分支</p>
+
+<pre><code>git merge dev 合并完成后删除dev分支，再次查看branch 只剩下master
+</code></pre>
+
+<p>4.删除分支</p>
+
+<pre><code>git branch -d dev
+</code></pre>
+
+<hr />
+
+<h2 id="远程仓库">远程仓库</h2>
+
+<p>创建SSH Key</p>
+
+<pre><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;
+</code></pre>
+
+<h3 id="添加远程库">添加远程库</h3>
+
+<p>1.关联一个远程库</p>
+
+<pre><code>git remote add origin git@github.com:lwtcumt/test.git
+</code></pre>
+
+<p>2.关联后，使用命令第一次推送master分支的所有内容</p>
+
+<pre><code>git push -u origin master
+</code></pre>
+
+<p>3.关联后</p>
+
+<pre><code>git push origin master  即可推送
+</code></pre>
+
+<hr />
+
+<h3 id="解决冲突">解决冲突</h3>
+
+<p>1.准备新的feature1分支</p>
+
+<pre><code>git checkout -b feature1
+</code></pre>
+
+<p>2.修改readme.txt并在分支上提交</p>
+
+<pre><code>git add readme.txt / git commit -m “and simple”
+</code></pre>
+
+<p>3.切换master 重复上面的操作,修改readme.txt</p>
+
+<pre><code>git checkout master
+</code></pre>
+
+<p>4.提交后会显示冲突 修改后保存</p>
+
+<pre><code>git add readme.txt / git commit -m ”conflict fixed”
+</code></pre>
+
+<p>5.git log 显示分支合并的情况，并删除分支</p>
+
+<pre><code>git log 
+git branch -d feature1
+</code></pre>
+
+<p>6.合并分支的时候 使用的是Fast forward模式，git会在merge时生成一个新的commit，这样从历史上就能看出分支信息.</p>
+
+<pre><code>git merge  --no-ff -m “merge with no-ff dev
+</code></pre>
+
+<h3 id="bug分支-正在工作是临时修改bug的情况">Bug分支(正在工作是临时修改bug的情况)</h3>
+
+<p>1.如果当前的程序正在进行中，需要搁置</p>
+
+<pre><code>git stash
+</code></pre>
+
+<p>2.修复后 git 回到工作现场</p>
+
+<pre><code>git stash pop
+</code></pre>
+
+<p>3.创建一个bug分支</p>
+
+<pre><code>git branch -b issue-101
+</code></pre>
+
+<p>4.修改readme.txt文件，并且提交</p>
+
+<pre><code>learngit git:(issue-101) ✗ git add readme.txt
+
+learngit git:(issue-101) ✗ git commit -m &quot;fix bug issue-101&quot;
+</code></pre>
+
+<p>5.返回master分支并与issue-101合并</p>
+
+<pre><code>learngit git:(issue-101) git checkout master
+
+git merge --no-ff -m &quot;merged bug fix 101&quot; issue-101
+</code></pre>
+
+<p>6.推送到github上</p>
+
+<pre><code>learngit git:(master) git push origin master
+</code></pre>
+
+<h3 id="feature分支-开发新功能-创建一个新分支feature">Feature分支(开发新功能-创建一个新分支feature)</h3>
+
+<p>1.开发一个新feature，最好新建一个分支</p>
+
+<pre><code>git branch -d feature-vulcan
+</code></pre>
+
+<p>2.如果要丢弃一个没有被合并过的分支</p>
+
+<pre><code>git branch -D feature-vulcan
+</code></pre>
+
+<h3 id="多人协作">多人协作</h3>
+
+<p>1.当clone从远程仓库的时候，实际上git自动把本地master和远程的master分支对应起来，并且远程仓库对应的是origin
+　
+查看远程库信息</p>
+
+<pre><code>git remote -v
+</code></pre>
+
+<p>2.推送分支 - 将该分支上所有的本地提交推送到远程库
+        <font color=red >git push origin master/dev(其他分支)</font></p>
+
+<pre><code> git push origin master/dev(其他分支)
+</code></pre>
+
+<p>在抓取分支的时候 clone默认情况下只能看到本地master分支
+    - <font color=red >希望在dev分支开发</font>，那么必须创建远程的origin的dev分支到本地
+　　　　　　　　　<font color=red >git checkout -b dev origin/dev</font></p>
+
+<pre><code>git checkout -b dev origin/dev
+
+git add env.txt / 
+
+git commit -m &quot;add env&quot; /git push origin dev
+</code></pre>
+
+<p>3.推送失败　　　　　　　　　　　　　　　　　</p>
+
+<pre><code>试图合并  git pull    
+</code></pre>
+
+<p>4.合并冲突，解决，并在本地解决</p>
+
+<p>5.没有冲突或者解决了冲突</p>
+
+<pre><code>git push origin 分支名
+</code></pre>
+
+<h1 id="引用">引用</h1>
+
+<blockquote>
+<p><a href="https://www.liaoxuefeng.com/wiki/896043488029600">廖雪峰的git教程</a>
+&gt; <a href="https://www.liaoxuefeng.com/wiki/896043488029600">https://www.liaoxuefeng.com/wiki/896043488029600</a></p>
+</blockquote>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://jasonliangjs.github.io/" style="background-image: url(https://avatars3.githubusercontent.com/u/43785651?s=460&amp;v=4)"><span class="hidden">Jason's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://jasonliangjs.github.io/">Jason</a></h4>
+  
+  <p>Stay hungry, Stay foolish.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Beijing, China</span>
+    
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Git%20%e5%91%bd%e4%bb%a4%e6%80%bb%e7%bb%93&nbsp;-&nbsp;I%20am%20thinking%20...&amp;url=https%3a%2f%2fjasonliangjs.github.io%2f2019%2f05%2f30%2fgit-%25E5%2591%25BD%25E4%25BB%25A4%25E6%2580%25BB%25E7%25BB%2593%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjasonliangjs.github.io%2f2019%2f05%2f30%2fgit-%25E5%2591%25BD%25E4%25BB%25A4%25E6%2580%25BB%25E7%25BB%2593%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fjasonliangjs.github.io%2f2019%2f05%2f30%2fgit-%25E5%2591%25BD%25E4%25BB%25A4%25E6%2580%25BB%25E7%25BB%2593%2f&amp;description=Git%20%e5%91%bd%e4%bb%a4%e6%80%bb%e7%bb%93"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fjasonliangjs.github.io%2f2019%2f05%2f30%2fgit-%25E5%2591%25BD%25E4%25BB%25A4%25E6%2580%25BB%25E7%25BB%2593%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/jasonliangjs.github.io\/2019\/05\/30\/git-%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93\/";  
+this.page.identifier = "https:\/\/jasonliangjs.github.io\/2019\/05\/30\/git-%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://jason-1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="https://jasonliangjs.github.io/2019/06/02/eureka-%E6%80%BB%E7%BB%93/">
+          <section class="post">
+              <h2>Eureka 总结</h2>
+              
+          </section>
+      </a>
+  
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">I am thinking ...</a> All rights reserved - 2018</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="https://jasonliangjs.github.io/js/jquery.js"></script>
+    <script type="text/javascript" src="https://jasonliangjs.github.io/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://jasonliangjs.github.io/js/index.js"></script>
+    
+</body>
+</html>
+

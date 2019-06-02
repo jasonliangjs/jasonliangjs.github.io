@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on I am thinking ...</title>
+    <link>https://jasonliangjs.github.io/post/</link>
+    <description>Recent content in Posts on I am thinking ...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>All rights reserved - 2018</copyright>
+    <lastBuildDate>Sun, 02 Jun 2019 14:24:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://jasonliangjs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Eureka 总结</title>
+      <link>https://jasonliangjs.github.io/2019/06/02/eureka-%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 02 Jun 2019 14:24:15 +0800</pubDate>
+      
+      <guid>https://jasonliangjs.github.io/2019/06/02/eureka-%E6%80%BB%E7%BB%93/</guid>
+      <description>本blog内容是工作，学习笔记，随缘更新，欢迎访问我的github，给我的项目右上方的 Star按钮，给予支持！！
+ Github：https://github.com/jasonliangjs  Eureka &amp;ndash;
+1.Eureka Server 微服务主要是由两个组件构成 Eureka Server注册中心和Eureka Client服务端.
+Eureka Server作为服务注册功能的服务器 它是服务注册中心而系统中其它微服务使用 Eureka Client 客户端 连接到Eureka Server 维持心跳连接这样就能监控系统中各个微服务是否正常运行.
+2.Eureka Server 注册中心 2.1 创建新项目
+2.2 配置pom
+2.3 在启动类上添加 @EnableEurekaServer 表示有注册中心功能
+eureka: client: service-url: defaultZone: http://localhost:8761/eureka/ 不允许eureka成为注册中心 register-with-eureka: false  3.Eureka Client服务注册 3.1 启动Eureka Server注册中心 项目打jar包 mvn clean package java运行 jar包 java -jar target/eureka-XXX.jar 后台运行eureka注册中心 nohup java -jar target/eureka-0.0.1-SNAPSHOT.jar &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;  3.2 创建eureka client-project项目 1.</description>
+    </item>
+    
+    <item>
+      <title>Git 命令总结</title>
+      <link>https://jasonliangjs.github.io/2019/05/30/git-%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Thu, 30 May 2019 16:36:08 +0800</pubDate>
+      
+      <guid>https://jasonliangjs.github.io/2019/05/30/git-%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</guid>
+      <description>本blog内容是工作，学习笔记，随缘更新，欢迎访问我的github，给我的项目右上方的 Star按钮，给予支持！！
+ Github：https://github.com/jasonliangjs  总结git一些命令 综述  git的时光机穿梭 git的远程仓库 git的分支管理  git的时光机穿梭-git常见命令 切换其他git远程仓库：
+git remote rm origin git remote add origin git@github.com:jasonliangjs/learngit.git  1.选择一个合适位置创建一个空目录
+mkdir/Users/michael/learngit  2.把目录变成Git可以管理的仓库
+git init  掌握工作区状态
+git status  如果git status显示有修改，查看修改内容
+git diff  3.将代码（readme）从工作区添加到暂存区
+git add readme.txt  4.‘注释’文件 将缓存区内容添加到本地仓库
+git commit -m &amp;quot;append GPL&amp;quot;  5.显示git的日志，—-pretty=oneline 精简日志
+git log --pretty=oneline  git的时光机 1.撤回上一个版本的git
+git reset --hard HEAD^  2.回滚到相应的版本号对应的版本
+git reset --hard 8ff33475c6797d10629ba849cf721bfe39ad863e  3.</description>
+    </item>
+    
+  </channel>
+</rss>
